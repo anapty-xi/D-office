@@ -13,6 +13,6 @@ class workpalce(models.Model):
 class booking(models.Model):
     owner_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='booking_workplace')
     workpalce_id = models.ForeignKey(workpalce, on_delete=models.CASCADE, related_name='booked_workplace')
-    date = models.DateField(auto_now=True)
+    date = models.DateField()
 
 

@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
-
+from django.templatetags.static import static
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 from django.conf.global_settings import MEDIA_URL, MEDIA_ROOT
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -49,6 +51,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'd_office.apps.DOfficeConfig',
 ]
+
+UNFOLD = {
+    "SITE_TITLE": "bookink admin",
+    "SITE_HEADER": "Администрирование",
+    "SIDEBAR": {
+        "show_search": False,
+        "show_all_applications": False,
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
